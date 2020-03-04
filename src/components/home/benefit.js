@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import "./benefit.scss"
-import BenefitCard from "./benefitCard"
+// import BenefitCard from "./benefitCard"
 
+
+// dummy data and icons for testing
 const data = [{
     number: "01",
     title: "benefit 1",
@@ -22,11 +24,23 @@ const data = [{
 },
 ]
 
+const BenefitCard = (content) => {
+    return (
+        <div className="benefit-card">
+            <div className="benefit-card-step" style={content.style == "on" ? { backgroundColor: "rgb(58, 139, 194)", color: "#f4f4f4" } : null} > <span>{content.number}</span></div>
+            <div className="benefit-card-text">
+                <h5 className="benefit-card-text__title">{content.title}</h5>
+                <p className="benefit-card-text__body">{content.body}</p>
+            </div>
+        </div>
+    )
+}
+
 const Benefits = () => {
     return (
-        <section className="section benefit-section">
+        <section className="section benefit-section" id="benefit">
             <div className="container">
-                <h2 className="secondary-header">WHAT WE OFFER :</h2>
+                <h2 className="secondary-header text-center">WHAT WE OFFER :</h2>
                 <div class="row">
                     {data.map(card => {
                         return (

@@ -1,0 +1,43 @@
+.stats-section {
+  background-color: var(--color-grey-light);
+}
+
+.stats {
+  &-help {
+    background-image: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+      ),
+      url("../../assets/img/hero-img.jpg");
+
+    padding: 2.5rem;
+
+    &__head {
+      margin-right: 1rem;
+      color: var(--color-grey-light);
+    }
+  }
+  &-list {
+    margin: 3rem auto 3rem auto;
+  }
+  &-item {
+    display: flex;
+    padding-bottom: 1rem;
+    &__icon {
+      align-self: center;
+    }
+    &__text {
+      padding-left: 0.75rem;
+      margin-left: 0.75rem;
+
+      &-count {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: -8px;
+      }
+      &-title {
+      }
+    }
+  }
+}

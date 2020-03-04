@@ -1,7 +1,16 @@
+@font-face {
+  font-family: simplifica;
+  src: url("../font/SIMPLIFICA\ Typeface.ttf");
+}
+
 .primary-header {
 }
 
 .secondary-header {
+  font-size: 3.25rem;
   color: green;
   padding-bottom: 3rem;
+
+  font-family: simplifica;
+  font-weight: bold;
 }

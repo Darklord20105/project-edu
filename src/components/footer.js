@@ -1,6 +1,7 @@
 import React from "react"
 import "./footer.scss"
 import Icon from "./icon"
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -27,11 +28,11 @@ const Footer = () => {
           <div className="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul className="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/blog">Our Blog</Link></li>
+              <li><Link >Privacy Policy</Link></li>
+              <li><Link to="/">Home</Link></li>
             </ul>
           </div>
         </div>
