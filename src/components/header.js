@@ -1,15 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { Nav, Navbar, Container, NavItem } from "react-bootstrap"
 import "./header.scss"
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <Navbar collapseOnSelect fluid expand="lg" id="mainNav">
       <Container>
         <Navbar.Brand>
           <Link className="nav-link" to="/">
-            Logo Goes here
+            {data.site.siteMetadata.title}
           </Link>
         </Navbar.Brand>
 

@@ -1,9 +1,24 @@
 import React from "react"
 import "./footer.scss"
 import Icon from "./icon"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Footer = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+          facebook
+          twitter
+          youtube
+          linkedin
+
+        }
+      }
+    }
+  `)
   return (
     <footer className="site-footer">
       <div className="container">
@@ -41,17 +56,15 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-sm-6 col-xs-12">
-            <p className="copyright-text">Copyright &copy; 2017 All Rights Reserved by
-         <a href="#">Scanfcode</a>.
-            </p>
+            <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by {data.site.siteMetadata.author}.</p>
           </div>
 
           <div className="col-md-4 col-sm-6 col-xs-12">
             <ul className="social-icons">
-              <li><a className="facebook" href="#"><Icon icon="facebook" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
-              <li><a className="twitter" href="#"><Icon icon="twitter" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
-              <li><a className="dribbble" href="#"><Icon icon="telegram" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
-              <li><a className="linkedin" href="#"><Icon icon="linkedin2" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
+              <li><a className="facebook" target="_blank" href={data.site.siteMetadata.facebook}><Icon icon="facebook" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
+              <li><a className="twitter" target="_blank" href={data.site.siteMetadata.twitter}><Icon icon="twitter" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
+              <li><a className="dribbble" target="_blank" href={data.site.siteMetadata.youtube}><Icon icon="youtube" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
+              <li><a className="linkedin" target="_blank" href={data.site.siteMetadata.linkedin}><Icon icon="linkedin2" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
             </ul>
           </div>
         </div>
