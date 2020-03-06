@@ -3,7 +3,11 @@
   src: url("../font/SIMPLIFICA\ Typeface.ttf");
 }
 
-.primary-header {
+.page-header {
+  padding: 2rem 0.5rem;
+  border-bottom: solid 1.5px var(--color-grey-dark);
+  border-top: solid 1.5px var(--color-grey-dark);
+  margin: 1.5rem 1rem;
 }
 
 .secondary-header {

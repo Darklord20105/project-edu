@@ -1,0 +1,64 @@
+.about {
+  &-head {
+    margin-top: 3rem;
+
+    &__picture-1 {
+      float: right;
+      margin: 0 0 0 2rem;
+      width: 50%;
+      object-fit: cover;
+    }
+    &__picture-2 {
+      float: left;
+      margin: 0 2rem 0 0;
+      width: 50%;
+      object-fit: cover;
+    }
+    &__text {
+      font-size: 1.2rem;
+      text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    &-head {
+      &__picture-1,
+      &__picture-2 {
+        float: none;
+        margin: 0 0 2rem 0;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &__text {
+        font-size: 1.2rem;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about {
+    &-head {
+      &__picture {
+        // margin: 0 0 1rem 2rem;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// cool styling to split a paragraph to two columns
+// .test {
+//   display: block;
+//   font-size: 1.2rem;
+//   line-height: 2rem;
+//   column-count: 2;
+//   column-gap: 2rem;
+//   column-rule: 1px solid rgba(51, 51, 51, 0.5);
+//   padding-bottom: 4rem;
+// }
