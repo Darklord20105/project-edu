@@ -1,0 +1,88 @@
+.post {
+  &-outer {
+    margin: 2rem 0;
+  }
+  &-image {
+    img {
+      width: 100%;
+    }
+  }
+  &-body {
+    display: flex;
+    padding: 15px 10px;
+
+    &__dateholder {
+      flex: 0 0 14%;
+      height: max-content;
+      color: #06d6a0;
+      letter-spacing: 4px;
+
+      text-align: center;
+
+      div {
+        border-bottom: solid 3px #06d6a0;
+        width: fit-content;
+        padding-bottom: 0.5rem;
+        margin-right: 15px;
+        font-size: 10px;
+      }
+
+      span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: block;
+      }
+    }
+    &__content {
+      width: max-content;
+    }
+  }
+}
+
+.post {
+  &-head {
+    &__meta {
+      &-item {
+        padding: 0 0.75rem;
+        display: flex;
+        align-items: center;
+
+        // flex: 0 0 33%;
+
+        span {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  &-text {
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    border-top: solid 2px #333;
+  }
+
+  &-footer-meta {
+    display: flex;
+    justify-content: space-between;
+
+    .soc {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      background: var(--color-grey-dark);
+      color: var(--color-grey-light);
+      padding: 10px;
+      margin: 0 0.5rem 0 1rem;
+      text-align: center;
+      border-radius: 50%;
+    }
+    .soc:hover {
+      background: var(--color-grey-light);
+      color: var(--color-primary-light);
+    }
+    .read {
+      position: relative;
+      right: 0;
+    }
+  }
+}

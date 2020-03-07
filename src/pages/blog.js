@@ -1,11 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
+import ArticleList from "../components/blog/postList"
+import SideBar from "../components/blog/sidebar"
 
 const Blog = () => {
   return (
     <Layout>
-      <h1>Blog Page</h1>
-      <p>lorem ipsum</p>
+      <div className="container">
+        <div className="row">
+          <h1 className="page-header">Support Blog</h1>
+        </div>
+        <div className="row">
+          <ArticleList />
+          <SideBar />
+        </div>
+
+      </div>
     </Layout>
   )
 }

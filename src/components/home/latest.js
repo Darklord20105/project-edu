@@ -30,7 +30,6 @@ const data = [
 const CardLatest = (content) => {
     return (
         <div class="col-lg-4 col-md-6">
-            {/* <!-- Single Blog --> */}
             <div class="single-blog">
                 <div class="blog-img">
                     <img src={content.img} alt="" />
