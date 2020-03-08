@@ -32,20 +32,3 @@ const SideBar = () => {
 }
 
 export default SideBar
-
-// <div className="sidebar-widget">
-// <h3 className="sidebar-title">Search Article</h3>
-// <form className="sidebar-search">
-//     <label for="text">Enter searchword to start</label>
-//     <input name="text" className="sidebar-search-box" />
-// </form>
-// </div>
-
-// <div className="sidebar-widget">
-// <h3 className="sidebar-title">Recent Posts</h3>
-// <ul>
-//     <li><a href="#">article 1</a></li>
-//     <li><a href="#">article 2</a></li>
-//     <li><a href="#">article 3</a></li>
-// </ul>
-// </div>

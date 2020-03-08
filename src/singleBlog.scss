@@ -1,0 +1,63 @@
+.full-article {
+  margin: 2rem 0;
+  width: 100%;
+
+  &-head {
+    margin: 1rem 0;
+
+    h2 {
+    }
+  }
+  &-meta {
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+    border-top: solid 1px #bbb;
+    border-bottom: solid 1px #bbb;
+
+    span {
+      padding: 0 0.75rem;
+    }
+  }
+  &-image {
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+    }
+  }
+
+  &-body {
+    margin-bottom: 1.4rem;
+
+    blockquote {
+      background-color: #faebbc;
+      border-top: 1px solid #e1cc89;
+      border-bottom: 1px solid #e1cc89;
+      margin: 5px;
+    }
+    .tr-bq {
+      font-style: italic;
+      color: #888;
+      border-left: 5px solid #27ae60;
+      margin-left: 0;
+      padding: 10px 15px;
+    }
+    .tr-bq::before {
+      content: "\f10d";
+      display: inline-block;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      margin-right: 10px;
+      color: #888;
+    }
+  }
+
+  &-footer {
+    div a {
+      margin: auto 0.25rem;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

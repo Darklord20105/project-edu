@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import ArticleList from "../components/blog/postList"
+import ArticleList from "../components/blog/articleList"
 import SideBar from "../components/blog/sidebar"
 
 const Blog = () => {

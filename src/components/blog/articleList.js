@@ -1,9 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-import "./postList.scss"
+import "./articleList.scss"
 import Icon from "../icon"
 
 const data = [
+    {
+        img: "https://4.bp.blogspot.com/-lNc1mBHtDl8/V6xhpAu9RHI/AAAAAAAAAq0/asMj511FWss0dFgEQ2dR9s3RlL-hP0nkACLcB/s1600/looks001-690x455-1442922105.jpg",
+        date: "DEC 2015, 5",
+        title: "Celebrated am announcing delightful remarkably we",
+        author: "Marie Curie",
+        tags: "Tech",
+        comments: "3",
+        body: "It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better. Sudden..."
+    },
     {
         img: "https://4.bp.blogspot.com/-lNc1mBHtDl8/V6xhpAu9RHI/AAAAAAAAAq0/asMj511FWss0dFgEQ2dR9s3RlL-hP0nkACLcB/s1600/looks001-690x455-1442922105.jpg",
         date: "DEC 2015, 5",
@@ -24,7 +33,7 @@ const data = [
     },
 ]
 
-const Article = (content) => {
+const ArticlePiece = (content) => {
     return (
         <div className="post-outer ">
             <div className="post-entry">
@@ -70,7 +79,7 @@ const ArticleList = () => {
         <div className="col-xl-8 col-lg-7 col-sm-12">
             {data.map(item => {
                 return (
-                    <Article
+                    <ArticlePiece
                         img={item.img}
                         title={item.title}
                         author={item.author}
