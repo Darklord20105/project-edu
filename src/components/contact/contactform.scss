@@ -1,0 +1,60 @@
+.contact-form {
+  .title {
+    font-size: 2.5em;
+    // font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    color: #242424;
+    margin: 1rem 0;
+
+    span {
+      color: var(--color-secondary);
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0.75rem 0;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    margin-top: 15px;
+    background-color: transparent;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #242424;
+  }
+}
+
+.contact-map {
+  height: 65%;
+
+  margin-top: 0.75rem;
+}
+
+.contact-info {
+  display: block;
+  margin: 2rem auto;
+  &-item {
+    padding: 0.2rem 0.01rem;
+
+    span {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.contact-social {
+  margin-top: 0.5rem;
+  a {
+    padding: 0 0.5rem;
+    color: #333;
+  }
+}

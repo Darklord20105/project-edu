@@ -7,15 +7,13 @@ import Testimonials from "../components/about/testimonials"
 const About = () => {
   return (
     <Layout>
-      <section>
-        <div className="container">
-          <div className="row">
-            <h1 className="page-header">About Us</h1>
-          </div>
-          <AboutMain />
-          <TeamList />
-          <Testimonials />
+      <section className="container">
+        <div className="row">
+          <h1 className="page-header">About Us</h1>
         </div>
+        <AboutMain />
+        <TeamList />
+        <Testimonials />
       </section>
     </Layout>
   )

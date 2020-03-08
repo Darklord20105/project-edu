@@ -5,22 +5,22 @@ import Icon from "../icon"
 // dummy data for testing purposes
 const data = [
     {
-        icon: "rss",
+        icon: "study",
         title: "static 1",
         count: "120"
     },
     {
-        icon: "github",
+        icon: "award",
         title: "static 2",
         count: "12"
     },
     {
-        icon: "dropbox",
+        icon: "users",
         title: "static 3",
         count: "4500"
     },
     {
-        icon: "blogger",
+        icon: "cloud3",
         title: "static 4 static ",
         count: "320"
     },

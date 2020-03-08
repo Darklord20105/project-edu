@@ -36,8 +36,8 @@ const Article = (content) => {
                             <div className="post-head__title"><h2>{content.title}</h2></div>
                             <div className="post-head__meta row">
                                 <span className="post-head__meta-item"><Icon icon="user-tie" /><span>{content.author}</span></span>
-                                <span className="post-head__meta-item" ><Icon icon="envelop" /><span>{content.tags}</span></span>
-                                <span className="post-head__meta-item"><Icon icon="rss" /><span>{content.comments} comments</span></span>
+                                <span className="post-head__meta-item" ><Icon icon="stack" /><span>{content.tags}</span></span>
+                                <span className="post-head__meta-item"><Icon icon="bubbles4" /><span>{content.comments} comments</span></span>
                             </div>
                         </div>
                         <div className="post-text">
@@ -46,17 +46,17 @@ const Article = (content) => {
                         <div className="post-footer-meta">
                             <div>
                                 <span className="btn btn-outline-secondary">Share</span>
-                                <Link className="soc">
+                                <Link className="soc facebook">
                                     <Icon icon="facebook" />
                                 </Link>
-                                <Link className="soc">
+                                <Link className="soc twitter">
                                     <Icon icon="twitter" />
                                 </Link>
-                                <Link className="soc">
+                                <Link className="soc google">
                                     <Icon icon="google" />
                                 </Link>
                             </div>
-                            <Link className="read btn btn-outline-secondary">Read more</Link>
+                            <Link className="read-more btn btn-outline-secondary">Read more</Link>
                         </div>
                     </div>
                 </article>

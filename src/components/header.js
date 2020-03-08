@@ -43,7 +43,7 @@ const Header = () => {
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/contact">
-                CONTACT US
+                CONTACT
               </Link>
             </NavItem>
           </Nav>

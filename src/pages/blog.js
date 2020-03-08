@@ -6,7 +6,7 @@ import SideBar from "../components/blog/sidebar"
 const Blog = () => {
   return (
     <Layout>
-      <div className="container">
+      <section className="container">
         <div className="row">
           <h1 className="page-header">Support Blog</h1>
         </div>
@@ -14,8 +14,7 @@ const Blog = () => {
           <ArticleList />
           <SideBar />
         </div>
-
-      </div>
+      </section>
     </Layout>
   )
 }

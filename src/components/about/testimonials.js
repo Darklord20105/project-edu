@@ -40,7 +40,7 @@ also we can use filled boxes by adding the word -filled to the end of the classN
 const TestimonialCard = (content) => {
     return (
         <div className="row">
-            <div class="col-md-6 col-sm-12 m-auto">
+            <div class="col-md-8 col-sm-12 m-auto">
 
                 <div id="tb-testimonial" class="testimonial testimonial-default">
                     <div class="testimonial-section">
@@ -67,7 +67,7 @@ const Testimonials = () => {
             <h2 className="secondary-header text-center">
                 WHAT OUR CUSTOMER SAY ABOUT US
             </h2>
-            <div className="row">
+            <div className="row m-auto">
                 {data.map(item => {
                     return (
                         <TestimonialCard

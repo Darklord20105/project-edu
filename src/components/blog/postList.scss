@@ -14,13 +14,13 @@
     &__dateholder {
       flex: 0 0 14%;
       height: max-content;
-      color: #06d6a0;
+      color: var(--color-secondary);
       letter-spacing: 4px;
 
       text-align: center;
 
       div {
-        border-bottom: solid 3px #06d6a0;
+        border-bottom: solid 3px var(--color-secondary);
         width: fit-content;
         padding-bottom: 0.5rem;
         margin-right: 15px;
@@ -42,6 +42,7 @@
 .post {
   &-head {
     &__meta {
+      padding: 5px;
       &-item {
         padding: 0 0.75rem;
         display: flex;
@@ -66,21 +67,29 @@
     justify-content: space-between;
 
     .soc {
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
+      width: 8px;
+      height: 8px;
+      line-height: 8px;
       background: var(--color-grey-dark);
       color: var(--color-grey-light);
-      padding: 10px;
-      margin: 0 0.5rem 0 1rem;
+      padding: 8px;
+      margin: 0 0 0 1rem;
       text-align: center;
-      border-radius: 50%;
+      border-radius: 5px;
     }
-    .soc:hover {
-      background: var(--color-grey-light);
-      color: var(--color-primary-light);
+
+    a.facebook:hover {
+      background-color: #3b5998;
     }
-    .read {
+
+    a.twitter:hover {
+      background-color: #00aced;
+    }
+
+    a.google:hover {
+      background-color: #ff2515;
+    }
+    .read-more {
       position: relative;
       right: 0;
     }
