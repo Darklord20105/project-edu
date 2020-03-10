@@ -5,7 +5,7 @@
   --color-secondary: #06d6a0;
 
   --color-grey-light: #faf9f9;
-  --color-grey-dark: #333;
+  --color-grey-dark: rgb(51, 51, 51);
 }
 
 .section {
@@ -15,6 +15,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--color-grey-light);
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

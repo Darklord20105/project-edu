@@ -29,13 +29,13 @@ const ContactForm = () => {
                     <div className="row contact-info">
                         <h3>Contact Info</h3>
                         <div>
-                            <div className="contact-info-item"><Icon icon="map" color="#06d6a0" /><span>address: 463 Lyon Avenueord, Us 01757</span></div>
-                            <div className="contact-info-item"><Icon icon="mail4" color="#06d6a0" /><span>E-mail: info@kitchen.com</span></div>
-                            <div className="contact-info-item"><Icon icon="phone" color="#06d6a0" /><span>Phone Number: + 180 - 123 - 4567</span></div>
+                            <div className="contact-info-item"><i class="far fa-map" style={{ color: "#06d6a0" }}></i><span>address: 463 Lyon Avenueord, Us 01757</span></div>
+                            <div className="contact-info-item"><i class="fas fa-envelope-open-text" style={{ color: "#06d6a0" }}></i><span>E-mail: info@kitchen.com</span></div>
+                            <div className="contact-info-item"><i class="fas fa-phone-square" style={{ color: "#06d6a0" }}></i><span>Phone Number: + 180 - 123 - 4567</span></div>
                             <div className="contact-social">
-                                <Link><Icon icon="facebook" size="1.2rem"></Icon></Link>
-                                <Link><Icon icon="twitter" size="1.2rem"></Icon></Link>
-                                <Link><Icon icon="google" size="1.2rem"></Icon></Link>
+                                <Link><i class="fab fa-facebook-f"></i></Link>
+                                <Link><i class="fab fa-twitter"></i></Link>
+                                <Link><i class="fab fa-google-plus-g"></i></Link>
                             </div>
                         </div>
                     </div>

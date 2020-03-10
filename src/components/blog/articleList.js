@@ -44,9 +44,9 @@ const ArticlePiece = (content) => {
                         <div className="post-head">
                             <div className="post-head__title"><h2>{content.title}</h2></div>
                             <div className="post-head__meta row">
-                                <span className="post-head__meta-item"><Icon icon="user-tie" /><span>{content.author}</span></span>
-                                <span className="post-head__meta-item" ><Icon icon="stack" /><span>{content.tags}</span></span>
-                                <span className="post-head__meta-item"><Icon icon="bubbles4" /><span>{content.comments} comments</span></span>
+                                <span className="post-head__meta-item"><i className="fas fa-user"></i> <span>{content.author}</span></span>
+                                <span className="post-head__meta-item" ><i className="fas fa-layer-group"></i><span>{content.tags}</span></span>
+                                <span className="post-head__meta-item"><i className="far fa-comments"></i><span>{content.comments} comments</span></span>
                             </div>
                         </div>
                         <div className="post-text">
@@ -54,16 +54,18 @@ const ArticlePiece = (content) => {
                         </div>
                         <div className="post-footer-meta">
                             <div>
-                                <span className="btn btn-outline-secondary">Share</span>
+                                <span className="post-footer-meta-btn btn btn-outline-secondary">Share</span>
+
                                 <Link className="soc facebook">
-                                    <Icon icon="facebook" />
+                                    <i class="fab fa-facebook-f"></i>
                                 </Link>
                                 <Link className="soc twitter">
-                                    <Icon icon="twitter" />
+                                    <i class="fab fa-twitter"></i>
                                 </Link>
                                 <Link className="soc google">
-                                    <Icon icon="google" />
+                                    <i class="fab fa-google-plus-g"></i>
                                 </Link>
+
                             </div>
                             <Link className="read-more btn btn-outline-secondary">Read more</Link>
                         </div>
