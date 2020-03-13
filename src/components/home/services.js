@@ -1,7 +1,6 @@
 import React from "react"
 import Icon from "../icon"
 import { Link } from "gatsby"
-import "./services.scss"
 
 const data = [
     {

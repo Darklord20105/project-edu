@@ -3,9 +3,8 @@ import { Carousel, Container } from "react-bootstrap"
 import logo1 from "../../assets/img/logo/logo1.png"
 import logo2 from "../../assets/img/logo/logo2.png"
 import logo3 from "../../assets/img/logo/logo3.png"
-// import logo4 from "../assets/img/logo/logo4.png"
-// import logo5 from "../assets/img/logo/logo5.png"
-import "./sponsores.scss"
+import logo4 from "../../assets/img/logo/logo4.png"
+import logo5 from "../../assets/img/logo/logo5.png"
 
 const Sponsores = () => {
     return (
@@ -17,21 +16,35 @@ const Sponsores = () => {
                         <img
                             className="d-block logo"
                             src={logo1}
-                            alt="First slide"
+                            alt="slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block logo"
                             src={logo2}
-                            alt="Third slide"
+                            alt="slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block logo"
                             src={logo3}
-                            alt="Third slide"
+                            alt="slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block logo"
+                            src={logo4}
+                            alt="slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block logo"
+                            src={logo5}
+                            alt="slide"
                         />
                     </Carousel.Item>
                 </Carousel>

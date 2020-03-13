@@ -1,5 +1,4 @@
 import React from "react"
-import "./stats.scss"
 import Icon from "../icon"
 
 // dummy data for testing purposes

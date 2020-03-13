@@ -1,3 +1,33 @@
 @import "base";
 @import "typography";
-@import "layout";
+
+// General Layout Styles
+@import "components/layout/header";
+@import "components/layout/footer";
+
+// Home Page Components Styles
+@import "components/home/showcase";
+@import "components/home/sponsores";
+@import "components/home/services";
+@import "components/home/stats";
+@import "components/home/benefit";
+@import "components/home/latest";
+
+// About Page components Styles
+
+@import "components/about/aboutMain";
+@import "components/about/teamList";
+@import "components/about/testimonials";
+
+// Blog Page components Styles
+
+@import "components/blog/articleList";
+@import "components/blog/sidebar";
+
+// Single Blog component Page
+
+@import "components/blog/singleBlogPage";
+
+// Contact Page component Styles
+
+@import "components/contact/contactform";

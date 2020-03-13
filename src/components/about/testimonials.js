@@ -1,5 +1,5 @@
 import React from "react"
-import "./testimonials.scss"
+
 
 // dummy data for testing
 const data = [

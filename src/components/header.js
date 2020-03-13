@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { Nav, Navbar, Container, NavItem } from "react-bootstrap"
-import "./header.scss"
+
+import { Trigger } from "../lang-switch"
+import { FormattedMessage } from 'react-intl'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -19,7 +21,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand>
           <Link className="nav-link" to="/">
-            {data.site.siteMetadata.title}
+            <FormattedMessage id="logo_text" />
           </Link>
         </Navbar.Brand>
 
@@ -28,23 +30,26 @@ const Header = () => {
           <Nav className="ml-auto">
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/">
-                HOME
+                <FormattedMessage id="home" />
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/blog">
-                BLOG
+                <FormattedMessage id="blog" />
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/about">
-                ABOUT US
+                <FormattedMessage id="about" />
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/contact">
-                CONTACT
+                <FormattedMessage id="contact" />
               </Link>
+            </NavItem>
+            <NavItem className="nav-item">
+              <Trigger />
             </NavItem>
           </Nav>
         </Navbar.Collapse>

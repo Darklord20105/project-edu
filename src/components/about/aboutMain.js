@@ -1,6 +1,5 @@
 import React from "react"
 import Img1 from "../../assets/img/about-main.jpg"
-import "./aboutMain.scss"
 
 const par = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor id eu nisl nunc mi ipsum faucibus vitae. Sit amet consectetur adipiscing elit. Risus viverra adipiscing at in. A erat nam at lectus urna duis convallis convallis. Accumsan sit amet nulla facilisi morbi tempus. Viverra tellus in hac habitasse platea dictumst vestibulum. Tellus in hac habitasse platea dictumst vestibulum. Ut sem viverra aliquet eget sit. Ipsum consequat nisl vel pretium lectus quam id leo in. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a. Velit egestas dui id ornare arcu odio ut sem nulla. Gravida rutrum quisque non tellus orci ac auctor augue. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales. Quis risus sed vulputate odio ut enim. Lacus sed turpis tincidunt id aliquet risus feugiat. Est velit egestas dui id ornare arcu odio. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus.
 

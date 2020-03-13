@@ -1,6 +1,4 @@
 import React from "react"
-import "./contactform.scss"
-import Icon from "../icon"
 import { Link } from "gatsby"
 
 const ContactForm = () => {

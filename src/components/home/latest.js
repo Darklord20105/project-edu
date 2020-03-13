@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import "./latest.scss"
 
 //dummy data for testing
 const data = [

@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: "Company Name",
+    description: "Company Name",
     author: "DarkLord",
     facebook: "http://www.facebook.com",
     twitter: "http://www.twitter.com",
@@ -14,6 +15,7 @@ module.exports = {
     linkedin: "http://www.linkedin.com",
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-source-filesystem`,

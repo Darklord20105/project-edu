@@ -6,23 +6,19 @@ section {
   padding: 20px 0;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
+.card-body .btn-primary:hover,
+.card-body .btn-primary:focus {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   box-shadow: none;
   outline: none;
 }
 
-.btn-primary {
+.card-body .btn-primary {
   color: #fff;
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
 }
-
-// section {
-//   padding: 60px 0;
-// }
 
 section .section-title {
   text-align: center;

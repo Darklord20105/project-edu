@@ -1,7 +1,4 @@
 import React, { useState } from "react"
-import "./benefit.scss"
-// import BenefitCard from "./benefitCard"
-
 
 // dummy data and icons for testing
 const data = [{

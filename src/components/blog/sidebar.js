@@ -1,5 +1,4 @@
 import React from "react"
-import "./sidebar.scss"
 import { Card, Form, FormControl, Button, ListGroup } from "react-bootstrap"
 import { Link } from "gatsby"
 

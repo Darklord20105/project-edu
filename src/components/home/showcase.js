@@ -1,6 +1,4 @@
 import React from "react"
-import "./showcase.scss"
-import { Link } from "gatsby"
 
 const ShowCase = () => {
     return (

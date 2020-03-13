@@ -1,5 +1,4 @@
 import React from "react"
-import "../singleBlog.scss"
 import Layout from "../components/layout"
 import Icon from "../components/icon"
 import { LatestPostsBox, SubscribeBox } from "../components/blog/sidebar"

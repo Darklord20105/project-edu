@@ -1,5 +1,4 @@
 import React from "react"
-import "./footer.scss"
 import Icon from "./icon"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
