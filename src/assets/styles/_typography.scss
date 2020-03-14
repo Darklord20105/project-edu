@@ -87,6 +87,14 @@
   font-style: normal;
 }
 
+div[lang="ar"] {
+  font-family: "OpenSans" !important;
+  font-size: 150%;
+}
+div[lang="en"] {
+  font-family: "Roboto" !important;
+}
+
 .page-header {
   padding: 2rem 0.5rem;
   border-bottom: solid 1.5px rgba(51, 51, 51, 0.1);

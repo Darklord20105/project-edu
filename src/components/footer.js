@@ -1,6 +1,7 @@
 import React from "react"
 import Icon from "./icon"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { Trigger } from "../lang-switch"
 
 const Footer = () => {
 
@@ -53,12 +54,12 @@ const Footer = () => {
         <hr />
       </div>
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center" >
           <div className="col-md-8 col-sm-6 col-xs-12">
             <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by {data.site.siteMetadata.author}.</p>
           </div>
 
-          <div className="col-md-4 col-sm-6 col-xs-12">
+          <div className="col-md-4 col-sm-6 col-xs-12" >
             <ul className="social-icons">
               <li><a className="facebook" target="_blank" href={data.site.siteMetadata.facebook}><Icon icon="facebook" size="1rem" style={{ marginBottom: "5px" }} /></a></li>
               <li><a className="twitter" target="_blank" href={data.site.siteMetadata.twitter}><Icon icon="twitter" size="1rem" style={{ marginBottom: "5px" }} /></a></li>

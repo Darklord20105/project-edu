@@ -1,5 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
+// import Layout from "../components/layout"
+import { Layout } from "../lang-switch/"
 import AboutMain from "../components/about/aboutMain"
 import TeamList from "../components/about/teamList"
 import Testimonials from "../components/about/testimonials"
@@ -7,14 +8,16 @@ import Testimonials from "../components/about/testimonials"
 const About = () => {
   return (
     <Layout>
-      <section className="container">
-        <div className="row">
-          <h1 className="page-header">About Us</h1>
-        </div>
-        <AboutMain />
-        <TeamList />
-        <Testimonials />
-      </section>
+      <>
+        <section className="container">
+          <div className="row">
+            <h1 className="page-header">About Us</h1>
+          </div>
+          <AboutMain />
+          <TeamList />
+          <Testimonials />
+        </section>
+      </>
     </Layout>
   )
 }

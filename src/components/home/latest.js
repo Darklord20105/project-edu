@@ -35,7 +35,7 @@ const CardLatest = (content) => {
                         <a>{content.category}</a>
                     </div>
                 </div>
-                <div class="blog-content">
+                <div class="blog-content text-center">
                     <div class="blog-title">
                         <h4>{content.title}</h4>
                         <div class="meta">
