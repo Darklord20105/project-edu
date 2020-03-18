@@ -1,5 +1,6 @@
 import React from "react"
 // import Layout from "../components/layout"
+import Head from '../lang-switch/Head/index'
 import { Layout } from "../lang-switch/"
 import AboutMain from "../components/about/aboutMain"
 import TeamList from "../components/about/teamList"
@@ -9,6 +10,7 @@ const About = () => {
   return (
     <Layout>
       <>
+        <Head title="about" />
         <section className="container">
           <div className="row">
             <h1 className="page-header">About Us</h1>

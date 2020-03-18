@@ -48,7 +48,7 @@ const Statics = () => {
             <div className="row stats-help m-auto">
                 <div className="m-auto" style={{ display: "flex", alignItems: "center" }}>
                     <h3 className="stats-help__head">Looking For First-Class Education Degree?</h3>
-                    <button className="btn btn-primary">CALL US</button>
+                    <button className="btn btn-primary" style={{ margin: "0 1rem" }}>CALL US</button>
                 </div>
             </div>
 

@@ -19,15 +19,15 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect fluid expand="lg" id="mainNav">
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand >
           <Link className="nav-link" to="/">
             <FormattedMessage id="logo_text" />
           </Link>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-          <Nav >
+        <Navbar.Collapse id="responsive-navbar-nav" >
+          <Nav className="justify-content-end" style={{ width: "100%" }}>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/">
                 <FormattedMessage id="home" />

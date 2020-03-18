@@ -7,12 +7,17 @@
 }
 
 .sponsores-section {
-  margin: 1.5rem 0 3rem 0;
-  padding: 0.5rem 0 3rem 0;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
   color: var(--color-grey-dark);
   background-color: var(--color-grey-dark);
+}
+
+// second sponser component
+div[lang="ar"] .caro {
+  justify-content: flex-end;
 }

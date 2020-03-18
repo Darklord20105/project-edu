@@ -27,6 +27,7 @@
     "react-helmet": "^5.2.1",
     "react-icomoon": "^2.0.3",
     "react-intl": "^4.1.1",
+    "react-multi-carousel": "^2.5.2",
     "recompose": "^0.30.0"
   },
   "devDependencies": {

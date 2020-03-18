@@ -1,6 +1,7 @@
 import React from "react"
 // import Layout from "../components/layout"
 import { Layout } from "../lang-switch/"
+import Head from '../lang-switch/Head/index'
 import Icon from "../components/icon"
 import { LatestPostsBox, SubscribeBox } from "../components/blog/sidebar"
 import { Link } from "gatsby"
@@ -184,9 +185,9 @@ const ArticleReplyForm = () => {
 
 const SingleBlog = () => {
 
-    console.log(item)
     return (
         <Layout>
+            <Head title="blog" />
             <section className="container">
                 <div className="row">
                     <h1 className="page-header">Article Details</h1>

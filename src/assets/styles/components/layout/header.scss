@@ -2,12 +2,20 @@
   margin: 5px 10px;
   width: 7rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
+// div[lang="en"] .nav-align {
+//   margin-left: auto;
+// }
+// div[lang="ar"] .nav-align {
+//   margin-right: auto;
+// }
+
 .active-nav-item {
-  color: #f4f4f4 !important;
-  background-color: var(--color-primary);
-  border-radius: 5px;
+  // color: #f4f4f4 !important;
+  // background-color: var(--color-primary);
+  color: var(--color-primary) !important;
+  border-bottom: 2px solid var(--color-primary) !important;
 }
