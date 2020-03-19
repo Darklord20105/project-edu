@@ -51,8 +51,8 @@ const ArticlePiece = (content) => {
                             <p>{content.body}</p>
                         </div>
                         <div className="post-footer-meta">
-                            <div>
-                                <span className="post-footer-meta-btn btn btn-outline-secondary">Share</span>
+                            <div className="d-flex align-items-center">
+                                <span className="post-footer-meta-btn btn btn-outline-secondary mx-3">Share</span>
 
                                 <Link className="soc facebook">
                                     <i class="fab fa-facebook-f"></i>

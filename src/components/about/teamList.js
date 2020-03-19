@@ -51,23 +51,23 @@ const MemberCard = (content) => {
                             <div className="card-body text-center mt-4">
                                 <h4 className="card-title">{content.name}</h4>
                                 <p className="card-text">{content.info}</p>
-                                <ul className="list-inline">
-                                    <li className="list-inline-item">
+                                <ul className="list-inline" style={{ paddingInlineStart: "0" }}>
+                                    <li className="d-inline-block mx-2">
                                         <a className="social-icon text-xs-center" target="_blank" href="#">
                                             <i className="fab fa-facebook"></i>
                                         </a>
                                     </li>
-                                    <li className="list-inline-item">
+                                    <li className="d-inline-block mx-2">
                                         <a className="social-icon text-xs-center" target="_blank" href="#">
                                             <i className="fab fa-twitter"></i>
                                         </a>
                                     </li>
-                                    <li className="list-inline-item">
+                                    <li className="d-inline-block mx-2">
                                         <a className="social-icon text-xs-center" target="_blank" href="#">
                                             <i className="fab fa-skype"></i>
                                         </a>
                                     </li>
-                                    <li className="list-inline-item">
+                                    <li className="d-inline-block mx-2">
                                         <a className="social-icon text-xs-center" target="_blank" href="#">
                                             <i className="fab fa-google"></i>
                                         </a>

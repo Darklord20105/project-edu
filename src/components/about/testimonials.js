@@ -1,5 +1,5 @@
 import React from "react"
-import Carousel from "react-multi-carousel"
+import { Carousel } from "react-bootstrap"
 import Img from "../../assets/img/logo/logo1.png"
 
 // dummy data for testing
@@ -38,7 +38,6 @@ const responsive = {
 };
 
 const TestimonialsSingle = (content) => {
-    console.log(content)
     return (
         <div className="d-block m-auto" >
             <div className="card  card-0">
@@ -49,7 +48,7 @@ const TestimonialsSingle = (content) => {
                             <img src={Img} />
                         </div>
                         <div style={{ margin: "0 1rem" }}>
-                            <h4>{content.name} <span style={{ display: "block", color: "#333", fontWeight: "400", fontSize: "1rem" }}>{content.job}</span></h4>
+                            <h4>{content.name} <span style={{ display: "block", color: "#333", fontWeight: "400", fontSize: "1rem", color: "var(--color-primary-light)" }}>{content.job}</span></h4>
                         </div>
                     </div>
                 </div>
@@ -67,23 +66,18 @@ const Testimonials = () => {
                 WHAT OUR CUSTOMER SAY ABOUT US
             </h2>
             <Carousel
-                swipeable={false}
-                arrows={false}
-                draggable={false}
-                showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                // autoPlay={true}
-                // autoPlaySpeed={6000}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                // containerClass="caro"
-                dotListClass="custom-dot-list-style"
+                id="testimonials"
+                indicators={true}
+                keyboard={true}
+                touch={true}
+
             >
-                {data.map(item => {
-                    return <TestimonialsSingle name={item.name} job={item.job} text={item.text} />
+                {data.map(e => {
+                    return (
+                        <Carousel.Item>
+                            <TestimonialsSingle name={e.name} job={e.job} text={e.text} />
+                        </Carousel.Item>
+                    )
                 })}
 
             </Carousel>

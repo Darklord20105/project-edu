@@ -112,13 +112,13 @@ section .section-title {
 }
 
 .backside .card a {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--color-secondary) !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-  color: var(--color-secondary) !important;
+  color: var(--color-primary) !important;
 }
 
 .backside .card .card-text {

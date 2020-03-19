@@ -5,17 +5,17 @@ import { Link } from "gatsby"
 const data = [
     {
         icon: "cogs",
-        title: "first service",
+        title: "first service Title",
         body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
     },
     {
         icon: "sphere",
-        title: "second service",
+        title: "second service Title",
         body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
     },
     {
         icon: "trophy1",
-        title: "third service",
+        title: "third service Title",
         body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
     },
 
@@ -23,15 +23,18 @@ const data = [
 
 const ServiceCard = (content) => {
     return (
-        <div className="s-card col-md-4 col-sm-12">
-            <Icon className="s-card-icon" icon={content.icon} size="3rem" color="rgba(58, 139, 194)" />
-            <h4 className="s-card-title">{content.title}</h4>
-            <p className="s-card-body">{content.body}</p>
-            {/*use either a tag or link tag ..it depends on the purpose */}
-            <Link className="btn btn-outline-primary">
-                Read More
-            </Link>
+        <div className="col-md-4 col-sm-12">
+            <div className="s-card ">
+                <Icon className="s-card-icon" icon={content.icon} size="4rem" color="var(--color-primary)" />
+                <h4 className="s-card-title">{content.title}</h4>
+                <p className="s-card-body">{content.body}</p>
+                {/*use either a tag or link tag ..it depends on the purpose */}
+                {/* <Link className="btn btn-outline-primary">
+                    Read More
+                </Link> */}
+            </div>
         </div>
+
     )
 }
 

@@ -377,6 +377,24 @@
 /*----------------- Testimonials CARD 3 -----------------*/
 /*----------------------------------------------------*/
 
+#testimonials {
+  ol.carousel-indicators {
+    li {
+      background-color: var(--color-primary-light);
+    }
+    li.active {
+      background-color: var(--color-primary-dark);
+    }
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+}
+
 .card-main {
   padding: 50px;
   border-radius: 10px;
@@ -390,7 +408,7 @@
   border: 1px solid var(--color-grey-dark);
   position: relative;
   border-radius: 10px;
-  min-height: 17rem;
+  min-height: 22rem;
 }
 
 .content {
