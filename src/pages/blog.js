@@ -1,15 +1,15 @@
 import React from "react"
-// import Layout from "../components/layout"
-import Head from '../lang-switch/Head/index'
-import { Layout } from "../lang-switch/"
+import Layout from "../components/layout"
+import Head from '../components/head'
 import ArticleList from "../components/blog/articleList"
 import SideBar from "../components/blog/sidebar"
 
 const Blog = () => {
+  const title = "المدونة"
   return (
     <Layout>
       <>
-        <Head title="blog" />
+        <Head title={title} />
         <section className="container">
           <div className="row">
             <h1 className="page-header">Support Blog</h1>

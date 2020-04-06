@@ -27,10 +27,11 @@ const ContactForm = () => {
                     <div className="row contact-info">
                         <h3>Contact Info</h3>
                         <div>
-                            <div className="contact-info-item"><i class="far fa-map" style={{ color: "#06d6a0" }}></i><span>address: 463 Lyon Avenueord, Us 01757</span></div>
-                            <div className="contact-info-item"><i class="fas fa-envelope-open-text" style={{ color: "#06d6a0" }}></i><span>E-mail: info@kitchen.com</span></div>
-                            <div className="contact-info-item"><i class="fas fa-phone-square" style={{ color: "#06d6a0" }}></i><span>Phone Number: + 180 - 123 - 4567</span></div>
+                            <div className="contact-info-item"><i class="far fa-map" style={{ color: "rgb(91, 154, 207)" }}></i><span>address: 463 Lyon Avenueord, Us 01757</span></div>
+                            <div className="contact-info-item"><i class="fas fa-envelope-open-text" style={{ color: "rgb(91, 154, 207)" }}></i><span>E-mail: info@kitchen.com</span></div>
+                            <div className="contact-info-item"><i class="fas fa-phone-square" style={{ color: "rgb(91, 154, 207)" }}></i><span>Phone Number: + 180 - 123 - 4567</span></div>
                             <div className="contact-social">
+                                <a>Social</a>
                                 <Link><i class="fab fa-facebook-f"></i></Link>
                                 <Link><i class="fab fa-twitter"></i></Link>
                                 <Link><i class="fab fa-google-plus-g"></i></Link>
@@ -39,9 +40,6 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
-
-
-
         </section>
     )
 }

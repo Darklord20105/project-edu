@@ -2,9 +2,6 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { Nav, Navbar, Container, NavItem } from "react-bootstrap"
 
-import { Trigger } from "../lang-switch"
-import { FormattedMessage } from 'react-intl'
-
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -21,7 +18,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand >
           <Link className="nav-link" to="/">
-            <FormattedMessage id="logo_text" />
+            شعار الموقع
           </Link>
         </Navbar.Brand>
 
@@ -30,26 +27,23 @@ const Header = () => {
           <Nav className="justify-content-end" style={{ width: "100%" }}>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/">
-                <FormattedMessage id="home" />
+                الرئيسية
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/blog">
-                <FormattedMessage id="blog" />
+                المدونة
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/about">
-                <FormattedMessage id="about" />
+                حول الموقع
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/contact">
-                <FormattedMessage id="contact" />
+                تواصل معنا
               </Link>
-            </NavItem>
-            <NavItem className="nav-item">
-              <Trigger />
             </NavItem>
           </Nav>
         </Navbar.Collapse>

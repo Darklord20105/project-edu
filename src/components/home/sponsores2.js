@@ -2,7 +2,6 @@ import React from "react"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Container } from "react-bootstrap"
-import { FormattedMessage } from "react-intl"
 
 import logo1 from "../../assets/img/logo/logo1.png"
 import logo2 from "../../assets/img/logo/logo2.png"
@@ -34,7 +33,9 @@ const Sponsores = () => {
     return (
         <section className=" section sponsores-section">
             <Container>
-                <h2 className="secondary-header text-center"><FormattedMessage id="sponsers" /></h2>
+                <h2 className="secondary-header text-center">
+                    بعض من زبائننا
+                </h2>
                 <Carousel
                     swipeable={false}
                     arrows={false}

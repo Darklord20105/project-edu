@@ -13,9 +13,9 @@
 .site-footer hr.small {
   margin: 20px 0;
 }
-.site-footer h6 {
+.site-footer h5 {
   color: #fff;
-  font-size: 16px;
+  line-height: 2;
   text-transform: uppercase;
   margin-top: 5px;
   letter-spacing: 2px;
@@ -47,7 +47,7 @@
   display: inline-block;
 }
 .site-footer .social-icons {
-  text-align: right;
+  // text-align: right;
 }
 .site-footer .social-icons a {
   width: 40px;

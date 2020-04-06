@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Icon from "../icon"
 
 // dummy data for testing purposes
@@ -48,7 +49,7 @@ const Statics = () => {
             <div className="row stats-help m-auto">
                 <div className="m-auto" style={{ display: "flex", alignItems: "center" }}>
                     <h3 className="stats-help__head">Looking For First-Class <span style={{ fontWeight: "lighter" }}>Education Degree</span> ?</h3>
-                    <button className="btn btn-primary" style={{ margin: "0 1rem" }}>CALL US</button>
+                    <Link to="/contact" className="btn btn-primary" style={{ margin: "0 1rem" }}>CALL US</Link>
                 </div>
             </div>
 

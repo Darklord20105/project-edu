@@ -1,7 +1,7 @@
 import React from "react"
-// import Layout from "../components/layout"
-import { Layout } from "../lang-switch/"
-import Head from '../lang-switch/Head/index'
+import Layout from "../components/layout"
+// import { Layout } from "../lang-switch/"
+import Head from '../components/head'
 import ShowCase from "../components/home/showcase"
 // import Sponsores from "../components/home/sponsores"
 import Sponsores from "../components/home/sponsores2"
@@ -11,10 +11,11 @@ import LatestPosts from "../components/home/latest"
 import Services from "../components/home/services"
 
 const IndexPage = () => {
+  const title = "أهلا بكم"
   return (
     <Layout>
       <>
-        <Head title="welcome" />
+        <Head title={title} />
         <ShowCase />
         <Sponsores />
         <Services />

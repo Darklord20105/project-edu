@@ -1,7 +1,6 @@
 import React from "react"
-// import Layout from "../components/layout"
-import { Layout } from "../lang-switch/"
-import Head from '../lang-switch/Head/index'
+import Layout from "../components/layout"
+import Head from '../components/head'
 import Icon from "../components/icon"
 import { LatestPostsBox, SubscribeBox } from "../components/blog/sidebar"
 import { Link } from "gatsby"
