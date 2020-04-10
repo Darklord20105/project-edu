@@ -91,16 +91,16 @@ exports.createPages = ({ graphql, actions }) => {
     })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//     const { createNodeField } = actions
 
-    if (node.internal.type === `ContentfulBlogPost`) {
-        const value = createFilePath({ node, getNode })
-        createNodeField({
-            name: `slug`,
-            node,
-            value,
-        })
-    }
-}
+//     if (node.internal.type === `ContentfulBlogPost`) {
+//         const value = createFilePath({ node, getNode })
+//         createNodeField({
+//             name: `slug`,
+//             node,
+//             value,
+//         })
+//     }
+// }
 
