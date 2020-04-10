@@ -68,7 +68,7 @@ const Blog = (props) => {
 
 export default Blog
 
-export const query = graphql`
+export const pageQuery = graphql`
     query ($skip: Int!, $limit: Int!){
         allContentfulBlogPost (
             sort: { fields: [publishedDate], order:DESC}
