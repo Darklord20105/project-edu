@@ -69,11 +69,11 @@ const Blog = (props) => {
 export default Blog
 
 export const pageQuery = graphql`
-    query ($skip: Int!, $limit: Int!){
+    query {
         allContentfulBlogPost (
             sort: { fields: [publishedDate], order:DESC}
-            limit: $limit
-            skip: $skip
+            limit: 10
+            skip: 0
             ) {
             edges {
                 node {
