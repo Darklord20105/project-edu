@@ -3,15 +3,15 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { Nav, Navbar, Container, NavItem } from "react-bootstrap"
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <Navbar collapseOnSelect fluid expand="lg" id="mainNav">

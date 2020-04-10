@@ -1,71 +1,44 @@
 import React from "react"
-import { Link } from "gatsby"
-
-const data = [
-    {
-        img: "https://4.bp.blogspot.com/-lNc1mBHtDl8/V6xhpAu9RHI/AAAAAAAAAq0/asMj511FWss0dFgEQ2dR9s3RlL-hP0nkACLcB/s1600/looks001-690x455-1442922105.jpg",
-        date: "DEC 2015, 5",
-        title: "Celebrated am announcing delightful remarkably we",
-        author: "Marie Curie",
-        tags: "Tech",
-        comments: "3",
-        body: "It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better. Sudden..."
-    },
-    {
-        img: "https://4.bp.blogspot.com/-lNc1mBHtDl8/V6xhpAu9RHI/AAAAAAAAAq0/asMj511FWss0dFgEQ2dR9s3RlL-hP0nkACLcB/s1600/looks001-690x455-1442922105.jpg",
-        date: "DEC 2015, 5",
-        title: "Celebrated am announcing delightful remarkably we",
-        author: "Marie Curie",
-        tags: "Tech",
-        comments: "3",
-        body: "It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better. Sudden..."
-    },
-    {
-        img: "https://1.bp.blogspot.com/-imLHdrk9sPM/V6xiTWcRlfI/AAAAAAAAArc/pYwdCMRpupYDNE9JHToqvctCVzWHYP1YwCLcB/s1600/looks010-690x455-1442922007.jpg",
-        date: "DEC 2015, 5",
-        title: "She Alteration Everything Sympathize Impossible",
-        author: "John Doe",
-        tags: "science",
-        comments: "5",
-        body: "Has bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do.Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better.Sudden she seeing."
-    },
-]
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const ArticlePiece = (content) => {
+    console.log(content)
+    const dat = content.date.split(" ")
     return (
-        <div className="post-outer ">
+        <div className="post-outer">
             <div className="post-entry">
                 <div className="post-image"><img src={content.img} /></div>
                 <article className="post-body">
-                    <div className="post-body__dateholder"><div><span>DEC</span> 05, 2019</div></div>
+                    <div className="post-body__dateholder"><div style={{ textTransform: "uppercase" }}><span>{dat[1]}</span>{`${dat[0]}, ${dat[2]}`}</div></div>
                     <div className="post-body__content">
                         <div className="post-head">
-                            <div className="post-head__title"><h2>{content.title}</h2></div>
+                            <div className="post-head__title"><Link to={`/blog/${content.slug}`}><h2 dangerouslySetInnerHTML={{ __html: content.title }}></h2></Link></div>
                             <div className="post-head__meta row">
                                 <span className="post-head__meta-item"><i className="fas fa-user"></i> <span>{content.author}</span></span>
-                                <span className="post-head__meta-item" ><i className="fas fa-layer-group"></i><span>{content.tags}</span></span>
-                                <span className="post-head__meta-item"><i className="far fa-comments"></i><span>{content.comments} comments</span></span>
+                                <span className="post-head__meta-item" ><i className="fas fa-layer-group"></i><span>{content.tags === null ? "soc" : content.tags}</span></span>
+                                <span className="post-head__meta-item"><i className="far fa-comments"></i><span>{content.comments} تعليقات</span></span>
                             </div>
                         </div>
                         <div className="post-text">
-                            <p>{content.body}</p>
+                            {/* {documentToReactComponents(content.body.json)} */}
                         </div>
                         <div className="post-footer-meta">
                             <div className="d-flex align-items-center">
-                                <span className="post-footer-meta-btn btn btn-outline-secondary mx-3">Share</span>
+                                <span className="post-footer-meta-btn btn btn-outline-secondary mx-3 font-weight-bold">مشاركة</span>
 
                                 <Link className="soc facebook">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i className="fab fa-facebook-f"></i>
                                 </Link>
                                 <Link className="soc twitter">
-                                    <i class="fab fa-twitter"></i>
+                                    <i className="fab fa-twitter"></i>
                                 </Link>
                                 <Link className="soc google">
-                                    <i class="fab fa-google-plus-g"></i>
+                                    <i className="fab fa-google-plus-g"></i>
                                 </Link>
 
                             </div>
-                            <Link className="read-more btn btn-outline-secondary">Read more</Link>
+                            <Link to={`/blog/${content.slug}`} className="read-more btn btn-outline-secondary font-weight-bold">تابع القراءة</Link>
                         </div>
                     </div>
                 </article>
@@ -74,18 +47,19 @@ const ArticlePiece = (content) => {
     )
 }
 
-const ArticleList = () => {
+const ArticleList = (props) => {
+    const { data } = props
     return (
         <div className="col-xl-8 col-lg-7 col-sm-12">
-            {data.map(item => {
+            {data.allContentfulBlogPost.edges.map(item => {
                 return (
                     <ArticlePiece
-                        img={item.img}
-                        title={item.title}
-                        author={item.author}
-                        tags={item.tags}
-                        comments={item.tags}
-                        body={item.body}
+                        title={item.node.title}
+                        key={item.node.id}
+                        body={item.node.body}
+                        date={item.node.publishedDate}
+                        slug={item.node.slug}
+                        img={item.node.featuredImage.fluid.src}
                     />
                 )
             })}
@@ -94,3 +68,4 @@ const ArticleList = () => {
 }
 
 export default ArticleList
+

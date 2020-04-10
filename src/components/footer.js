@@ -13,7 +13,6 @@ const Footer = () => {
           twitter
           youtube
           linkedin
-
         }
       }
     }
@@ -48,7 +47,7 @@ const Footer = () => {
               <li><Link to="/about">معلومات عن موقعنا</Link></li>
               <li><Link to="/contact">تواصل معنا</Link></li>
               <li><Link to="/blog">المدونة</Link></li>
-              <li><Link to="/singleBlog">رابط عرض مقال واحد</Link></li>
+              {/* <li><Link to="/singleBlog">رابط عرض مقال واحد</Link></li> */}
               <li><Link to="/">الرئيسية</Link></li>
             </ul>
           </div>

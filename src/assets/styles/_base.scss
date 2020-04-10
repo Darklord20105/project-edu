@@ -22,6 +22,13 @@ html {
   color: var(--color-grey-light);
 }
 
+@media screen and (max-width: 576px) {
+  .not-found {
+    width: 90%;
+    margin: 1rem 0;
+  }
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

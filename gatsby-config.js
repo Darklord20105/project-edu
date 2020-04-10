@@ -1,8 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require('dotenv').config({
+  path: '.env',
+});
 
 module.exports = {
   siteMetadata: {
@@ -18,11 +16,20 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "u5tsquzrfyy7",
+        accessToken: "mEnidXZnmeNBlD6l0G8f5VNFi-bqxf4pkg1z7pkux1w",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ]
 }

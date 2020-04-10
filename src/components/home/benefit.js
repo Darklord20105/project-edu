@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 // dummy data and icons for testing
 const data = [{
@@ -24,7 +24,7 @@ const data = [{
 const BenefitCard = (content) => {
     return (
         <div className="benefit-card">
-            <div className="benefit-card-step" style={content.style == "on" ? { backgroundColor: "rgb(58, 139, 194)", color: "#f4f4f4" } : null} > <span>{content.number}</span></div>
+            <div className="benefit-card-step" style={content.style === "on" ? { backgroundColor: "rgb(58, 139, 194)", color: "#f4f4f4" } : null} > <span>{content.number}</span></div>
             <div className="benefit-card-text">
                 <h5 className="benefit-card-text__title">{content.title}</h5>
                 <p className="benefit-card-text__body">{content.body}</p>

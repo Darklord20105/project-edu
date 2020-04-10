@@ -3,58 +3,36 @@ import Layout from "../components/layout"
 import Head from '../components/head'
 import Icon from "../components/icon"
 import { LatestPostsBox, SubscribeBox } from "../components/blog/sidebar"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { Card, Form, Button } from "react-bootstrap"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-
-const item = {
-    img: "https://4.bp.blogspot.com/-lNc1mBHtDl8/V6xhpAu9RHI/AAAAAAAAAq0/asMj511FWss0dFgEQ2dR9s3RlL-hP0nkACLcB/s1600/looks001-690x455-1442922105.jpg",
-    date: "DEC 2015, 5",
-    title: "Celebrated am announcing delightful remarkably we",
-    author: "Marie Curie",
-    tags: "Tech",
-    comments: "3",
-    body: "It bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do. Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better. Sudden..."
-}
-
-const ArticleFull = () => {
+const ArticleFull = ({ data }) => {
+    const options = {
+        renderNode: {
+            "embedded-asset-block": (node) => {
+                const url = node.data.target.fields.file['en-US'].url
+                const alt = node.data.target.fields.title['en-US']
+                return <img src={url} alt={alt} />
+            }
+        }
+    }
+    console.log(data)
     return (
         <div className="full-article col-12">
             <div className="full-article-head">
-                <h2>She Alteration Everything Sympathize Impossible</h2>
+                <h2>{data.title}</h2>
             </div>
             <div className="full-article-meta">
-                <span><i className="fas fa-user"></i> Author</span>
-                <span><i className="far fa-calendar-alt"></i> December 5, 2020</span>
-                <span><i className="fas fa-layer-group"></i> Tags</span>
-                <span><i className="far fa-comments"></i> Comments</span>
+                <span><i className="fas fa-user"></i>  احمد الصالح </span>
+                <span><i className="far fa-calendar-alt"></i> {data.publishedDate}</span>
+                {/* <span><i className="fas fa-layer-group"></i> Tags</span>
+                <span><i className="far fa-comments"></i> Comments</span> */}
             </div>
             <div className="full-article-image">
-                <img src="https://1.bp.blogspot.com/-imLHdrk9sPM/V6xiTWcRlfI/AAAAAAAAArc/pYwdCMRpupYDNE9JHToqvctCVzWHYP1YwCLcB/s1600/looks010-690x455-1442922007.jpg" /></div>
+                <img src={data.featuredImage.fluid.src} /></div>
             <div className="full-article-body">
-                She bachelor cheerful of mistaken. Tore has sons put upon wife use bred seen. Its dissimilar invitation ten has discretion unreserved. Had you him humoured jointure ask expenses learning. Blush on in jokes sense do do.
-                <br />
-                <br />
-                <blockquote className="tr-bq">
-                    Brother hundred he assured reached on up no. On am nearer missed lovers. To it mother extent temper figure better.
-                </blockquote>
-                <br />
-                Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end procuring.
-                <br />
-                <br />
-                <ul>
-                    <li>Assistance imprudence yet sentiments</li>
-                    <li>Miss told ham dull knew see she spot near can spirit her entire</li>
-                    <li>Drawings offended yet answered.</li>
-                </ul>
-                <div>
-                    <br />
-                    Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom gay nor design age. Am weather to entered norland no in showing service. Ability thought enquire settled prudent you sir.
-                </div>
-                <div>
-                    <br />
-                    It if sometimes furnished unwilling as additions so. Blessing resolved peculiar fat graceful ham. Sussex on at really ladies in as elinor. Sir sex opinions age properly extended. Advice branch vanity or do thirty living. Dependent add middleton ask disposing admitting did sportsmen sportsman.
-                </div>
+                {documentToReactComponents(data.body.json, options)}
             </div>
             <div className="full-article-footer">
                 <span className="btn btn-outline-dark">Share</span>
@@ -182,7 +160,7 @@ const ArticleReplyForm = () => {
     )
 }
 
-const SingleBlog = () => {
+const SingleBlog = (props) => {
 
     return (
         <Layout>
@@ -193,7 +171,7 @@ const SingleBlog = () => {
                 </div>
                 <div className="row">
                     <div className="row col-xl-9 col-lg-8 col-sm-12">
-                        <ArticleFull />
+                        <ArticleFull data={props.data.contentfulBlogPost} />
                         <ArticleAuthor />
                         <ArticleComments />
                         <ArticleReplyForm />
@@ -213,3 +191,20 @@ const SingleBlog = () => {
 }
 
 export default SingleBlog
+
+export const pageQuery = graphql`
+    query($slug: String!) {
+      contentfulBlogPost(slug: {eq:$slug}) {
+        title
+        publishedDate(formatString:"MMM Do, YYYY")
+        body {
+            json
+        }
+        featuredImage {
+            fluid {
+                src
+            }
+        }
+      }
+    }
+    `;
