@@ -49,10 +49,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
         `
     ).then(result => {
-        if (result.errors) {
-            throw result.errors
-            console.log(result.errors)
-        }
+        // if (result.errors) {
+        //     throw result.errors
+        //     console.log(result.errors)
+        // }
         const posts = result.data.allContentfulBlogPost.edges
 
         // 2. create blog post pages
