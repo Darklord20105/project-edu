@@ -11,7 +11,7 @@ const Contact = () => {
         <Head title={title} />
         <section className="container">
           <div className="row">
-            <h1 className="page-header">Contact Us</h1>
+            <h1 className="page-header">معلومات الاتصال</h1>
           </div>
           <ContactForm />
         </section>

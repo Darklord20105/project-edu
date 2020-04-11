@@ -32,17 +32,17 @@ const Header = () => {
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/blog">
-                المدونة
+                أخبار الجامعات
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/about">
-                حول الموقع
+                من نحن
               </Link>
             </NavItem>
             <NavItem className="nav-item">
               <Link className="nav-link" activeClassName="active-nav-item" to="/contact">
-                تواصل معنا
+                أتصل بنا
               </Link>
             </NavItem>
           </Nav>

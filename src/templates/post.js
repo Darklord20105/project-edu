@@ -2,8 +2,9 @@ import React from "react"
 import Layout from "../components/layout"
 import Head from '../components/head'
 import Icon from "../components/icon"
-import { LatestPostsBox, SubscribeBox } from "../components/blog/sidebar"
-import { Link, graphql } from "gatsby"
+import { LatestPostsBox } from "../components/blog/sidebar"
+import SearchBox from "../components/blog/searchBox"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { Card, Form, Button } from "react-bootstrap"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -161,7 +162,7 @@ const ArticleReplyForm = () => {
 }
 
 const SingleBlog = (props) => {
-
+    console.log(props)
     return (
         <Layout>
             <Head title="blog" />
@@ -181,8 +182,9 @@ const SingleBlog = (props) => {
                         </div>
                     </div>
                     <div id="sidebar" className="col-xl-3 col-lg-4 col-sm-12">
-                        <LatestPostsBox />
-                        <SubscribeBox />
+                        <LatestPostsBox content={props.data.allContentfulBlogPost} />
+                        {/* <SubscribeBox /> */}
+                        <SearchBox />
                     </div>
                 </div>
             </section>
@@ -206,5 +208,17 @@ export const pageQuery = graphql`
             }
         }
       }
+      allContentfulBlogPost (
+            sort: { fields: [publishedDate], order:DESC}
+            limit: 3
+            ) {
+            edges {
+                node {
+                    id
+                    title   
+                    slug     
+                }
+            }
+        }
     }
     `;

@@ -2,8 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const ArticlePiece = (content) => {
-    console.log(content)
+export const ArticlePiece = (content) => {
     const dat = content.date.split(" ")
     return (
         <div className="post-outer">
@@ -21,6 +20,7 @@ const ArticlePiece = (content) => {
                             </div>
                         </div>
                         <div className="post-text">
+                            {documentToReactComponents(content.body.json).slice(1, 2)}
                             {/* {documentToReactComponents(content.body.json)} */}
                         </div>
                         <div className="post-footer-meta">
@@ -48,10 +48,9 @@ const ArticlePiece = (content) => {
 }
 
 const ArticleList = (props) => {
-    const { data } = props
     return (
         <div className="col-xl-8 col-lg-7 col-sm-12">
-            {data.allContentfulBlogPost.edges.map(item => {
+            {props.data.allContentfulBlogPost.edges.map(item => {
                 return (
                     <ArticlePiece
                         title={item.node.title}

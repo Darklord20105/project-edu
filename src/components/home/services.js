@@ -4,34 +4,31 @@ import { Link } from "gatsby"
 
 const data = [
     {
-        icon: "cogs",
-        title: "first service Title",
-        body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
+        icon: "coin-euro",
+        body: "تتميز تركيا بمستوى اسعار بين المتوسط والمنخفض، وذلك حسب مدينة الدراسة سواء في تكلفة الدراسة الجامعية او المصاريف اليومية للطالب"
     },
     {
         icon: "sphere",
-        title: "second service Title",
-        body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
+        body: "تعيش تركيا استقرارًا سياسيا واقتصاديا، حيث أنها تشكل سادس أكبر قوة اقتصادية على مستوى أوروبا، والسادسة عشرة على مستوى العالم"
     },
     {
         icon: "trophy1",
-        title: "third service Title",
-        body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
+        body: "تعد الشهادات الممنوحة من الجامعات التركية ذات اعتراف دولي ومصادق عليها في غالبية الدول العربية وكذلك في أوروبا والأمريكيتين"
+    },
+    {
+        icon: "study",
+        body: "تعتبر تركيا من الدول المتقدمة في مجال التعليم، لما توليه من اهتمام وتطوير دائم للقطاع التعليمي، أضف إلى ذلك الشراكات مع جامعات أوربية وأمريكية"
     },
 
 ]
 
 const ServiceCard = (content) => {
     return (
-        <div className="col-md-4 col-sm-12">
+        <div className="col-md-3 col-sm-12">
             <div className="s-card ">
-                <Icon className="s-card-icon" icon={content.icon} size="4rem" color="var(--color-primary)" />
-                <h4 className="s-card-title">{content.title}</h4>
+                <Icon className="s-card-icon" icon={content.icon} size="5rem" color="var(--color-primary)" />
+                {/* <h4 className="s-card-title">{content.title}</h4> */}
                 <p className="s-card-body">{content.body}</p>
-                {/*use either a tag or link tag ..it depends on the purpose */}
-                {/* <Link className="btn btn-outline-primary">
-                    Read More
-                </Link> */}
             </div>
         </div>
 
@@ -42,7 +39,7 @@ const Services = () => {
     return (
         <section className="section services-section">
             <div className="container">
-                <h2 className="secondary-header text-center">OUR SERVICES</h2>
+                <h2 className="secondary-header text-center">مزايا الدراسة في تركيا</h2>
                 <div className="row">
                     {data.map(item => {
                         return (

@@ -9,6 +9,7 @@ const Blog = (props) => {
   const title = "المدونة"
 
   const { currentPage, numPages } = props.pageContext
+  console.log(currentPage, numPages)
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? "/blog/" : `/blog/${(currentPage - 1).toString()}`
@@ -21,43 +22,40 @@ const Blog = (props) => {
         <Head title={title} />
         <section className="container">
           <div className="row">
-            <h1 className="page-header">Support Blog</h1>
+            <h1 className="page-header">أخبار الجامعات</h1>
           </div>
           <div className="row">
             <ArticleList data={props.data} />
             <SideBar />
+            <div>
+              {props.pageContext.numPages ?
+                <ul className="pagination pagination-lg">
+                  <li className="page-item">
+                    {!isFirst && (
+                      <Link className="page-link" to={prevPage} rel="prev">
+                        الصفحة السابقة →
+                      </Link>
+                    )}
+                  </li>
 
-            {/* Pagination */}
-            <ul className="pagination pagination-lg">
-              <li className="page-item">
-                {!isFirst && (
-                  <Link className="page-link" to={prevPage} rel="prev">
-                    ← Previous Page
-                  </Link>
-                )}
-              </li>
+                  {Array.from({ length: numPages }, (_, i) => (
+                    <li className="page-item">
+                      <Link className="page-link" key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
+                        {i + 1}
+                      </Link>
+                    </li>
+                  ))}
 
-              {Array.from({ length: numPages }, (_, i) => (
-                <li className="page-item">
-                  <Link className="page-link" key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
-                    {i + 1}
-                  </Link>
-                </li>
-              ))}
-
-              <li className="page-item">
-                {!isLast && (
-                  <Link className="page-link" to={nextPage} rel="next">
-                    Next Page →
-                  </Link>
-                )}
-              </li>
-            </ul>
-            {/* {Array.from({ length: numPages }, (_, i) => (
-              <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
-                {i + 1}
-              </Link>
-            ))} */}
+                  <li className="page-item">
+                    {!isLast && (
+                      <Link className="page-link" to={nextPage} rel="next">
+                        الصفحة التالية ←
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+                : null}
+            </div>
 
           </div>
         </section>
@@ -68,12 +66,14 @@ const Blog = (props) => {
 
 export default Blog
 
+// limit and skip are variablesnsent by the node config file but sometimes a bug happens and nothing is loaded
+// so we typed it manually
 export const pageQuery = graphql`
-    query {
+    query ($limit:Int, $skip:Int){
         allContentfulBlogPost (
             sort: { fields: [publishedDate], order:DESC}
-            limit: 10
-            skip: 0
+            limit: $limit
+            skip: $skip
             ) {
             edges {
                 node {

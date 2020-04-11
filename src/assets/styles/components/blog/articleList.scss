@@ -41,6 +41,11 @@
 
 .post {
   &-head {
+    &__title {
+      a {
+        text-decoration: none;
+      }
+    }
     &__meta {
       padding: 5px;
       &-item {

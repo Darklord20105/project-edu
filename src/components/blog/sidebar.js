@@ -1,34 +1,24 @@
 import React from "react"
-import { Card, Form, FormControl, Button, ListGroup } from "react-bootstrap"
-import { Link } from "gatsby"
+import { Card, Form, Button, ListGroup } from "react-bootstrap"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import SearchBox from "./searchBox"
 
-export const SearchBox = () => {
-    return (
-        <div className="my-4">
-            <Card>
-                <Card.Header>Search</Card.Header>
-                <Card.Body>
-                    <Form>
-                        <Form.Group controlId="formBasicEmail">
-                            <FormControl type="text" placeholder="Search" />
-                        </Form.Group>
-                        <Button variant="outline-info">Search</Button>
-                    </Form>
-                </Card.Body>
-            </Card>
-        </div>
-    )
-}
-
-export const LatestPostsBox = () => {
+export const LatestPostsBox = (content) => {
     return (
         <div className="my-4">
             <Card >
-                <Card.Header>Latest Posts</Card.Header>
+                <Card.Header>أحدث المقالات</Card.Header>
                 <ListGroup variant="flush">
-                    <ListGroup.Item><Link>Cras justo odio</Link></ListGroup.Item>
-                    <ListGroup.Item><Link>Dapibus ac facilisis in</Link></ListGroup.Item>
-                    <ListGroup.Item><Link>Vestibulum at eros</Link></ListGroup.Item>
+                    {content.content.edges.map(item => {
+                        return (
+                            <ListGroup.Item key={item.node.id}>
+                                <Link to={`/blog/${item.node.slug}`}>
+                                    {item.node.title}
+                                </Link>
+                            </ListGroup.Item>
+                        )
+                    })}
+
                 </ListGroup>
             </Card>
         </div>
@@ -55,11 +45,27 @@ export const SubscribeBox = () => {
 }
 
 const SideBar = () => {
+    const query = useStaticQuery(graphql`
+        query {
+        allContentfulBlogPost (
+            sort: { fields: [publishedDate], order:DESC}
+            limit: 3
+            ) {
+            edges {
+                node {
+                    id
+                    title   
+                    slug     
+                }
+            }
+        }
+    }
+    `)
     return (
         <div id="sidebar" className="col-xl-4 col-lg-5 col-sm-12">
             <SearchBox />
-            <LatestPostsBox />
-            <SubscribeBox />
+            <LatestPostsBox content={query.allContentfulBlogPost} />
+            {/* <SubscribeBox /> */}
         </div>
     )
 }
