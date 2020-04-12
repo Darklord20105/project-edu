@@ -21,11 +21,16 @@ const ArticleFull = ({ data }) => {
             }
         }
     }
-    const { slug, title } = data
+
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
-        config: { identifier: slug, title },
+        config: {
+            url: `https://awesome-wescoff-3560f0.netlify.com/blog/${data.slug}`,
+            identifier: `blog/${data.slug}`,
+            title: data.title,
+        }
     }
+
     return (
         <div className="full-article col-12">
             <div className="full-article-head">
@@ -212,6 +217,7 @@ export const pageQuery = graphql`
             json
         }
         slug
+        id
         featuredImage {
             fluid {
                 src
