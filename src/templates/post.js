@@ -23,12 +23,9 @@ const ArticleFull = ({ data }) => {
     }
 
     const disqusConfig = {
-        shortname: process.env.GATSBY_DISQUS_NAME,
-        config: {
-            url: `https://awesome-wescoff-3560f0.netlify.com/blog/${data.slug}`,
-            identifier: `blog/${data.slug}`,
-            title: data.title,
-        }
+        url: `https://awesome-wescoff-3560f0.netlify.com${this.props.location.pathname}`,
+        identifier: `${this.props.location.pathname}`,
+        title: data.title,
     }
 
     return (
@@ -56,7 +53,7 @@ const ArticleFull = ({ data }) => {
                     <Link className="btn btn-info py-2"><Icon icon="linkedin2" /></Link>
                 </div>
             </div>
-            <DiscussionEmbed config={disqusConfig} />
+            <DiscussionEmbed shortname="https-awesome-wescoff-3560f0-netlify-com" config={disqusConfig} />
         </div>
     )
 }
