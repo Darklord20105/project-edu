@@ -23,8 +23,8 @@ const ArticleFull = ({ data }) => {
     }
 
     const disqusConfig = {
-        url: `https://awesome-wescoff-3560f0.netlify.com${this.props.location.pathname}`,
-        identifier: `${this.props.location.pathname}`,
+        url: `https://awesome-wescoff-3560f0.netlify.com${props.location.pathname}`,
+        identifier: `${props.location.pathname}`,
         title: data.title,
     }
 
