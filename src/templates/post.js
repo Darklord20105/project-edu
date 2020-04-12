@@ -4,9 +4,12 @@ import Head from '../components/head'
 import Icon from "../components/icon"
 import { LatestPostsBox } from "../components/blog/sidebar"
 import SearchBox from "../components/blog/searchBox"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { Card, Form, Button } from "react-bootstrap"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { DiscussionEmbed } from "disqus-react"
+
+
 
 const ArticleFull = ({ data }) => {
     const options = {
@@ -18,7 +21,11 @@ const ArticleFull = ({ data }) => {
             }
         }
     }
-    console.log(data)
+    const { slug, title } = data
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: { identifier: slug, title },
+    }
     return (
         <div className="full-article col-12">
             <div className="full-article-head">
@@ -44,6 +51,7 @@ const ArticleFull = ({ data }) => {
                     <Link className="btn btn-info py-2"><Icon icon="linkedin2" /></Link>
                 </div>
             </div>
+            <DiscussionEmbed config={disqusConfig} />
         </div>
     )
 }
@@ -173,9 +181,10 @@ const SingleBlog = (props) => {
                 <div className="row">
                     <div className="row col-xl-9 col-lg-8 col-sm-12">
                         <ArticleFull data={props.data.contentfulBlogPost} />
-                        <ArticleAuthor />
+
+                        {/* <ArticleAuthor />
                         <ArticleComments />
-                        <ArticleReplyForm />
+                        <ArticleReplyForm /> */}
                         <div className="col-12 d-flex justify-content-between mt-3 ">
                             <div><Link>&larr; Previous Article</Link></div>
                             <div><Link>&rarr; Next Article</Link></div>
@@ -202,6 +211,7 @@ export const pageQuery = graphql`
         body {
             json
         }
+        slug
         featuredImage {
             fluid {
                 src

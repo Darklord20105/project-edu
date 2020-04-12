@@ -16,6 +16,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "bootstrap": "^4.4.1",
+    "disqus-react": "^1.0.8",
     "env-cmd": "^10.1.0",
     "gatsby": "^2.19.7",
     "gatsby-core-utils": "^1.1.1",
