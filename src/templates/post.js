@@ -22,11 +22,11 @@ const ArticleFull = ({ data }) => {
         }
     }
 
-    const disqusConfig = {
-        url: `https://awesome-wescoff-3560f0.netlify.com${props.location.pathname}`,
-        identifier: `${props.location.pathname}`,
-        title: data.title,
-    }
+    // const disqusConfig = {
+    //     url: `https://awesome-wescoff-3560f0.netlify.com${props.location.pathname}`,
+    //     identifier: `${props.location.pathname}`,
+    //     title: data.title,
+    // }
 
     return (
         <div className="full-article col-12">
@@ -53,7 +53,7 @@ const ArticleFull = ({ data }) => {
                     <Link className="btn btn-info py-2"><Icon icon="linkedin2" /></Link>
                 </div>
             </div>
-            <DiscussionEmbed shortname="https-awesome-wescoff-3560f0-netlify-com" config={disqusConfig} />
+            <DiscussionEmbed shortname="https-awesome-wescoff-3560f0-netlify-com" />
         </div>
     )
 }
